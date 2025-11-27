@@ -1,0 +1,34 @@
+
+import nltk 
+from nltk.stem.porter import *
+P_stemmer=PorterStemmer()
+words=['run','ran','running','kites','bolls','eataing','fishing']
+for w in words:
+    print(w+'-->'+P_stemmer.stem(w))
+    
+run-->run
+ran-->ran
+running-->run
+kites-->kite
+bolls-->boll
+eataing-->eata
+fishing-->fish
+
+
+import nltk
+nltk.download('wordnet')
+from nltk.stem import WordNetLemmatizer
+wnl=WordNetLemmatizer()
+words=['run','ran','running','kites','bolls','eataing','fishing']
+for w in words:
+    print(w+'-->'+wnl.lemmatize(w))
+
+    
+run-->run
+ran-->ran
+running-->running
+kites-->kite
+bolls-->boll
+eataing-->eataing
+fishing-->fishing
+    
