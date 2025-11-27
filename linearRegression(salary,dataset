@@ -1,0 +1,48 @@
+# importing all requried libraires
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+df = pd.read_csv(r'C:\Users\Admin\OneDrive\Desktop\lion.csv')
+print(df)
+
+ Unnamed: 0  dataset  salary
+0           0      1.1   39343
+1           1      1.3   46205
+2           2      1.5   37731
+3           3      1.0   43525
+4           4      2.2   39891
+5           5      2.9   56642
+6           6      3.0   60150
+7           7      3.2    5445
+8           8      3.2    6445
+9           9      3.7   64445
+
+
+# processing and splitting (preprocessing)
+x=df.drop('salary',axis=1)
+y=df['salary']
+print(x.shape,y.shape)
+
+(10, 2) (10,)
+
+# spliting into training and test
+x_train,x_test,y_train,y_test=train_test_split(x,y,random_state=102,test_size=2)
+print(x_train.shape,x_test.shape,y_train.shape,y_test.shape)
+
+(8, 2) (2, 2) (8,) (2,)
+
+#mode define
+model=LinearRegression()
+model.fit(x_train,y_train)
+print(model)
+
+LinearRegression()
+
+# model test
+predict=model.predict(x_test)
+print(predict)
+
+[37557.34345048 20194.93769968]
