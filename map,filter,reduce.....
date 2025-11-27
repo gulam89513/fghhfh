@@ -1,0 +1,48 @@
+# map
+num=[1,2,3,4,5]
+result=list(map(lambda x:x*2,num))
+print(result)    
+
+[2, 4, 6, 8, 10]
+
+#filter 
+num=[1,2,3,4,5]
+result=list(filter(lambda x:x%2==0,num))
+print(result)  
+
+[2, 4]
+
+#reduce
+from functools import reduce
+num=[1,2,3,4,5]
+result=reduce(lambda a,b: a+b,num)
+print(result)
+
+15
+
+#lambda
+square=lambda x:x * x
+print(square(5))
+
+25
+
+# grouping
+import pandas as pd 
+df=pd.DataFrame({'city':['A','A','B','B'],
+                 'sales':[10,20,30,40]
+                })
+result=df.groupby('city')['sales'].sum()
+print(result)
+
+city
+A    30
+B    70
+Name: sales, dtype: int64
+
+# Vectorization
+import numpy as np
+arr=np.array([1,2,3,4,5])
+result=arr*5
+print(result)
+
+[ 5 10 15 20 25]
