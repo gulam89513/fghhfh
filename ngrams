@@ -1,0 +1,17 @@
+from nltk.util import ngrams
+sen="the greatest glory in the living lies not in never falling but in rising every time we fall"
+uni=ngrams(sen.split(),1)
+for i in uni:
+    print(i)
+
+from nltk.util import ngrams
+sen="the greatest glory in the living lies not in never falling but in rising every time we fall"
+bi=ngrams(sen.split(),2)
+for i in bi:
+    print(i)
+
+from nltk.util import ngrams
+sen="the greatest glory in the living lies not in never falling but in rising every time we fall"
+tri=ngrams(sen.split(),3)
+for i in tri:
+    print(i)
