@@ -1,0 +1,38 @@
+import numpy as np 
+a = np.array([1,2,3,4,5])
+print("array=",a)
+
+sum=np.sum(a)
+print("sum=",sum)
+
+product=np.prod(a)
+print("product=",product)
+
+mean=np.mean(a)
+print("mean=",mean)
+
+standard_divation=np.std(a)
+print("standard_divation=",standard_divation)
+
+variance=np.var(a)
+print("variance=",variance)
+
+minimum=np.min(a)
+print("minimum=",minimum)
+
+maximum=np.max(a)
+print("maximum=",maximum)
+
+min_index=np.argmin(a)
+print("min_index=",min_index)
+
+output:
+array= [1 2 3 4 5]
+sum= 15
+product= 120
+mean= 3.0
+standard_divation= 1.4142135623730951
+variance= 2.0
+minimum= 1
+maximum= 5
+min_index= 0
