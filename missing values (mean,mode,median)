@@ -1,0 +1,62 @@
+import pandas as pd 
+import numpy as np
+df=pd.read_csv(r'C:\Users\Admin\OneDrive\Documents\isna.csv')
+print(df)
+developer  experts   salary
+0      java      3.0  20000.0
+1    python      6.0  35000.0
+2    python      NaN  40000.0
+3    python      5.0      NaN
+4      java      NaN  25000.0
+5       NaN      2.0  10000.0
+6    python      4.0      NaN
+
+
+df.isna().sum()
+
+developer    1
+experts      2
+salary       2
+dtype: int64
+
+
+mean=df['salary'].mean()
+df['salary']=df['salary'].fillna(df['salary'].mean())
+print(df)
+
+ developer  experts   salary
+0      java      3.0  20000.0
+1    python      6.0  35000.0
+2    python      NaN  40000.0
+3    python      5.0  26000.0
+4      java      NaN  25000.0
+5       NaN      2.0  10000.0
+6    python      4.0  26000.0
+
+
+median=df['experts'].median()
+df['experts']=df['experts'].fillna(df['experts'].median())
+print(df)
+
+  developer  experts   salary
+0      java      3.0  20000.0
+1    python      6.0  35000.0
+2    python      4.0  40000.0
+3    python      5.0  26000.0
+4      java      4.0  25000.0
+5       NaN      2.0  10000.0
+6    python      4.0  26000.0
+
+mode=df['developer'].mode()[0]
+df['developer'] = df['developer'].fillna(df['developer'].mode()[0])
+print(df)
+
+  developer  experts   salary
+0      java      3.0  20000.0
+1    python      6.0  35000.0
+2    python      4.0  40000.0
+3    python      5.0  26000.0
+4      java      4.0  25000.0
+5    python      2.0  10000.0
+6    python      4.0  26000.0
+
